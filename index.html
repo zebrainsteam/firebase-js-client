@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>FCM Push-notifications</title>
+    <link rel="shortcut icon" href="logo_black 200х200.png">
+
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/css/materialize.min.css">
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/js/materialize.min.js"></script>
+    <style type="text/css">
+        #alert,
+        #info
+        {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+<nav class="black">
+    <div class="container">
+        <div class="row left">
+            <div class="row">
+                <img width="75px" height="75px"  src="logo_white 200х200.png">
+                <label class="brand-logo"> Клиент для отладки Push-уведомлений</label>
+            </div>
+     </div>
+
+    </div>
+</nav>
+
+
+<main>
+    <div class="container">
+        <br>
+        <br>
+        <div class="card-panel red darken-1 white-text z-depth-2" id="alert">
+            <strong></strong>
+            <em id="alert-message"></em>
+        </div>
+         <div class="row">
+            <div class="input-field col s12" id="div_token">
+                <input type="text" name="token" id="token">
+                <label for="title">Токен</label>
+            </div>
+         </div>
+        <div class="row">
+            <button type="button" class="btn-large waves-effect waves-light black" id="generated"> Сгененрировать токен </button>
+        </div>
+        <div class="row">
+            <form action="" method="post" class="col s12" id="notification">
+                <div class="row">
+                    <div class="input-field col s12">
+                        <input type="text" name="title" id="title">
+                        <label for="title">Заголовок</label>
+                    </div>
+                    <div class="input-field col s12">
+                        <input type="text" name="body" id="body">
+                        <label for="body">Сообщение</label>
+                    </div>
+                    <div class="input-field col s12">
+                        <input type="text" name="icon" id="icon" value="">
+                        <label for="icon">URL картинки</label>
+                    </div>
+                </div>
+                <button type="submit" class="btn-large waves-effect waves-light black" id="send">Отправить</button>
+            </form>
+        </div>
+            <span id="info-message"></span>
+         <div id="message_row">
+             <p><strong>Firebase message id:</strong> <span id="fcm_id" style="word-break: break-all;"></span></p>
+         </div>
+    </div>
+</main>
+</body>
+</html>
+<script src="firebase.js"></script>
+<script src="app.js"></script>
